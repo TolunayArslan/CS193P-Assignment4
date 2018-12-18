@@ -12,6 +12,12 @@
 		8D8CBDFA21C940700056A915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8CBDF821C940700056A915 /* Main.storyboard */; };
 		8D8CBDFC21C940720056A915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8CBDFB21C940720056A915 /* Assets.xcassets */; };
 		8D8CBDFF21C940720056A915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8CBDFD21C940720056A915 /* LaunchScreen.storyboard */; };
+		8D8CBE0A21C942580056A915 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE0721C942580056A915 /* Set.swift */; };
+		8D8CBE0B21C942580056A915 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE0821C942580056A915 /* Card.swift */; };
+		8D8CBE0C21C942580056A915 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE0921C942580056A915 /* Deck.swift */; };
+		8D8CBE1121C942740056A915 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE0E21C942740056A915 /* ContainerView.swift */; };
+		8D8CBE1221C942740056A915 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE0F21C942740056A915 /* ButtonView.swift */; };
+		8D8CBE1321C942740056A915 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CBE1021C942740056A915 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		8D8CBDFB21C940720056A915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8CBDFE21C940720056A915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8CBE0021C940720056A915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D8CBE0721C942580056A915 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		8D8CBE0821C942580056A915 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8D8CBE0921C942580056A915 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		8D8CBE0E21C942740056A915 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		8D8CBE0F21C942740056A915 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		8D8CBE1021C942740056A915 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,44 @@
 		8D8CBDF321C940700056A915 /* CS193P-Assignment4 */ = {
 			isa = PBXGroup;
 			children = (
-				8D8CBDF421C940700056A915 /* AppDelegate.swift */,
+				8D8CBE1421C947DD0056A915 /* Supporting Files */,
 				8D8CBDF621C940700056A915 /* ViewController.swift */,
+				8D8CBE0D21C9426B0056A915 /* View */,
+				8D8CBE0621C9424D0056A915 /* Model */,
 				8D8CBDF821C940700056A915 /* Main.storyboard */,
-				8D8CBDFB21C940720056A915 /* Assets.xcassets */,
-				8D8CBDFD21C940720056A915 /* LaunchScreen.storyboard */,
 				8D8CBE0021C940720056A915 /* Info.plist */,
 			);
 			path = "CS193P-Assignment4";
+			sourceTree = "<group>";
+		};
+		8D8CBE0621C9424D0056A915 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D8CBE0821C942580056A915 /* Card.swift */,
+				8D8CBE0921C942580056A915 /* Deck.swift */,
+				8D8CBE0721C942580056A915 /* Set.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D8CBE0D21C9426B0056A915 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D8CBE0F21C942740056A915 /* ButtonView.swift */,
+				8D8CBE0E21C942740056A915 /* ContainerView.swift */,
+				8D8CBE1021C942740056A915 /* Grid.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D8CBE1421C947DD0056A915 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D8CBDFB21C940720056A915 /* Assets.xcassets */,
+				8D8CBDFD21C940720056A915 /* LaunchScreen.storyboard */,
+				8D8CBDF421C940700056A915 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +179,12 @@
 			files = (
 				8D8CBDF721C940700056A915 /* ViewController.swift in Sources */,
 				8D8CBDF521C940700056A915 /* AppDelegate.swift in Sources */,
+				8D8CBE1121C942740056A915 /* ContainerView.swift in Sources */,
+				8D8CBE1321C942740056A915 /* Grid.swift in Sources */,
+				8D8CBE0C21C942580056A915 /* Deck.swift in Sources */,
+				8D8CBE0A21C942580056A915 /* Set.swift in Sources */,
+				8D8CBE0B21C942580056A915 /* Card.swift in Sources */,
+				8D8CBE1221C942740056A915 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLF9WL2QZ5;
 				INFOPLIST_FILE = "CS193P-Assignment4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLF9WL2QZ5;
 				INFOPLIST_FILE = "CS193P-Assignment4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
