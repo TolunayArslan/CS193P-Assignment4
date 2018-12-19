@@ -8,8 +8,14 @@
 
 import Foundation
 
+// TODO: Provide a documentation for every single variable, method, class, and struct in your code.
+// https://swift.org/documentation/api-design-guidelines/ -> Fundamentals -> Write a documentation
+
+// TODO: Organize your code into logical chunks with the // MARK: name of the section.
+
+// FIXME: Use structs for simple types, like a card model.
 class Card: Hashable, Equatable {
-    
+
     var hashValue: Int
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.hashValue == rhs.hashValue
@@ -22,6 +28,7 @@ class Card: Hashable, Equatable {
     
     
     var isMatched = false
+    // FIXME: A better name would be isSelected
     var isChoosed = false
     
     init(color: Int, symbol: Int, shading: Int, number: Int) {
@@ -32,23 +39,27 @@ class Card: Hashable, Equatable {
         
         hashValue = Card.getUniqueIdentifier()
     }
-    
+
+    // TODO: This matrix could be a tuple. And this tuple could be defined as part of the controller.
+    // Why in the controller? Because the controller is in charge of linking the model to the views.
+    // You add extensions for the model and the view in the controller.
+    // And this piece of code is used primarily for this purpose (to communicate what goes in the view and the model).
     var matrix: [Int] {
         return [symbol.rawValue,color.rawValue,number.rawValue,shading.rawValue]
     }
     
-     var color: Color!
-     var symbol: Symbol!
-     var shading: Shading!
-     var number: Number!
+    var color: Color!
+    var symbol: Symbol!
+    var shading: Shading!
+    var number: Number!
     
-     enum Color: Int {
+    enum Color: Int {
         case firstColor = 1
         case secondColor
         case thirdColor
     }
     
-     enum Symbol: Int {
+    enum Symbol: Int {
         case firstSymbol = 1
         case secondSymbol
         case thirdSymbol

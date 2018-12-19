@@ -116,6 +116,7 @@
 				8D8CBDED21C940700056A915 /* Sources */,
 				8D8CBDEE21C940700056A915 /* Frameworks */,
 				8D8CBDEF21C940700056A915 /* Resources */,
+				47A6AD3721CAAE7B009AFF99 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -138,6 +139,7 @@
 				TargetAttributes = {
 					8D8CBDF021C940700056A915 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -171,6 +173,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47A6AD3721CAAE7B009AFF99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 \\\n    | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" \\\n    | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D8CBDED21C940700056A915 /* Sources */ = {
@@ -337,7 +359,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "T.Arslan.CS193P-Assignment4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -355,7 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "T.Arslan.CS193P-Assignment4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

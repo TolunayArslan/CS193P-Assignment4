@@ -7,7 +7,12 @@
 //
 
 import UIKit
+// TODO: Provide a documentation for every single variable, method, class, and struct in your code.
+// https://swift.org/documentation/api-design-guidelines/ -> Fundamentals -> Write a documentation
 
+// TODO: Organize your code into logical chunks with the // MARK: name of the section.
+
+// FIXME: Button view is redundant, a better name would be CardView.
 class ButtonView: UIView{
 
     var numberOfSymbols: Number = .one { didSet {setNeedsDisplay()} }
@@ -46,6 +51,7 @@ class ButtonView: UIView{
     // Simply set the bool value, then the color will be adjusted automatically
     var isChoosed = false { didSet {
         if isChoosed == true {
+            // FIXME: You can use the var directly in the if statement, like so: if isChoosed { ... }
             layer.borderColor = Constants.borderColorChoosed
             layer.borderWidth = Constants.borderWidth
         } else {
@@ -53,9 +59,11 @@ class ButtonView: UIView{
             }
         }
     }
-    
+
+    // FIXME: A better name would be isMismatched
     var misMatched = false {
         didSet {
+            // FIXME: You can use the var directly in the if statement, like so: if isMimatched { ... }
             if misMatched == true {
                 layer.borderColor = Constants.borderColorMiss
                 layer.borderWidth = Constants.borderWidth
@@ -67,10 +75,10 @@ class ButtonView: UIView{
     
     var isMatched = false {
         didSet {
+            // FIXME: You can use the var directly in the if statement, like so: if isMatched { ... }
             if isMatched == true {
                 layer.borderColor = Constants.borderColorMatched
                 layer.borderWidth = Constants.borderWidth
-
             }
         }
     }
@@ -135,6 +143,7 @@ class ButtonView: UIView{
         var centerOrigin: CGPoint!
         let path = UIBezierPath()
 
+        // FIXME: Use a switch statement to check for enum values.
         if position == .center {
             centerOrigin = origins[1]
         } else if position == .bottom {
@@ -148,7 +157,6 @@ class ButtonView: UIView{
             path.addLine(to: CGPoint(x: centerOrigin.x, y: centerOrigin.y + objectLength))
             path.addLine(to: CGPoint(x: centerOrigin.x+objectLength, y: centerOrigin.y + objectLength))
             path.close()
-            
         } else if symbol == .squiggles {
             path.addSquare(origin: centerOrigin,
                            rightTop: CGPoint(x: centerOrigin.x + objectLength, y: centerOrigin.y),
@@ -253,30 +261,3 @@ extension UIBezierPath {
         close()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

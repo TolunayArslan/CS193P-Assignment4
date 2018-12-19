@@ -6,10 +6,17 @@
 //  Copyright © 2018 Tolunay Arslan. All rights reserved.
 //
 
+// TODO: remove not necessary comments.
 // Core Graphics: underlying drawing system for normal 2d drawing in iOS
 
 import Foundation
 
+// TODO: Provide a documentation for every single variable, method, class, and struct in your code.
+// https://swift.org/documentation/api-design-guidelines/ -> Fundamentals -> Write a documentation
+
+// TODO: Organize your code into logical chunks with the // MARK: name of the section.
+
+// FIXME: Use structs for simple types, like a Set game.
 class Set {
     
     var deck = Deck()
@@ -25,7 +32,8 @@ class Set {
     func changeScoreMisMatch() {
         score -= 4
     }
-    
+
+    // FIXME: selectedCards is a better name.
     var choosedCards: [Card] {
         return getChoosedCards()
     }
@@ -58,7 +66,9 @@ class Set {
             print("Error in chooseCard: There are more")
         }
     }
-    
+
+    // FIXME: The correct name would be getChosenCards() (passive of the choose action)
+    // you might use selected cards as well: getSelectedCards().
     func getChoosedCards() -> [Card] {
         var returningCards = [Card]()
         for card in cardsOnTable {
@@ -80,7 +90,8 @@ class Set {
             score += 3
         }
     }
-    
+
+    // FIXME: deckCount is a better name.
     var countOfDeck: Int {
         return deck.deck.count
     }
@@ -104,8 +115,8 @@ class Set {
         }
     }
     
-    
-    
+
+    // FIXME: IsThereASet() is a better name.
     // Check whether set or not
     func wasThereAnySet() -> Bool {
         var getAllIndexes = cardsOnTable.map({return $0.hashValue})
@@ -123,17 +134,22 @@ class Set {
         }
         return false
     }
-    
+
+    // FIXME: The parameter name should be identifiers, because it's a collection.
+    // Is this parameter needed? The game struct already has direct access to the selected cards.
     func isThereASet(identifier: [Int]? ) -> Bool {
-        
+
+        // FIXME: Since this is a collection, use numbers, instead of number.
         var number = [0,0,0,0]
+        // FIXME: return returning is redundant, use a better name for this variable, like doesSelectionMatch
         var returning = false
         
         // Was there already any set?
         if identifier == nil {
+            // TODO: For this kind of construct, you can use the assertionFailure("some mistake").
+            // This would tell you if an unexpected error occurs while developing.
             guard choosedCards.count == 3 else {print("some mistake"); return false}
-            
-            
+
             for index in number.indices {
                 for card in choosedCards {
                     number[index] += card.matrix[index]
@@ -141,10 +157,11 @@ class Set {
             }
             
             for sum in number {
+                // FIXME: You can use the boolean expressions direclty, like this: returning = sum % 3 == 0
                 if sum % 3 == 0 {
                     returning = true
                 } else {
-                    return false
+                    returning = false
                 }
             }
             return returning
@@ -158,6 +175,7 @@ class Set {
             }
             
             for sum in number {
+                // FIXME: You can use the boolean expressions direclty, like this: returning = sum % 3 == 0
                 if sum % 3 == 0 {
                     returning = true
                 } else {
@@ -167,7 +185,9 @@ class Set {
             return returning
         }
     }
-    
+
+    // FIXME: This method is not intuitive. A better method name could be: replaceMatchedCards()
+    // TODO: Inform what this method returns by using the - Return: documentation comment.
     func thereIsASet() -> [Card]{
         var returningCards = [Card]()
         
@@ -182,10 +202,4 @@ class Set {
         }
         return returningCards
     }
-    
-    
-    
-    
-    
-    
 }

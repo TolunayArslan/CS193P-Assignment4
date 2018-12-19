@@ -7,10 +7,17 @@
 //
 
 import UIKit
-// hello world
+
+// TODO: Provide a documentation for every single variable, method, class, and struct in your code.
+// https://swift.org/documentation/api-design-guidelines/ -> Fundamentals -> Write a documentation
+
+// TODO: Organize your code into logical chunks with the // MARK: name of the section.
 class ContainerView: UIView {
     var insetNum: CGFloat = 3.0
-    
+
+    // TODO: Hold the cardViews in a sepearate collection -> cards: [CardView]
+
+    // FIXME: A better name would be clearSelection()
     func cancelIsChoosed() {
         for button in subviews {
             if let buttonView = button as? ButtonView {
@@ -18,8 +25,10 @@ class ContainerView: UIView {
             }
         }
     }
+
     // Go through all buttonViews and give me the buttonView back where the identifiers match
     func identifierMatch(identifier: Int) -> ButtonView? {
+        // FIXME: This can be done with a simple filter. Especially if the cards are hold into a collection.
         for index in subviews.indices  {
             if let button = subviews[index] as? ButtonView {
                 if button.identifier == identifier {
